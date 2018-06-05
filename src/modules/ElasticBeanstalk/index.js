@@ -46,7 +46,7 @@ class ElasticBeanstalk {
   }: {
     environmentName: string,
     attributeNames: string
-  }): Promise<*> {
+  }): Promise<void> {
     return new Promise((resolve, reject) => {
       this._EB.describeEnvironmentHealth(
         {
@@ -65,7 +65,7 @@ class ElasticBeanstalk {
     environmentName
   }: {
     environmentName: string
-  }): Promise<*> {
+  }): Promise<void> {
     return new Promise((resolve, reject) => {
       this._EB.restartAppServer(
         {
@@ -85,7 +85,7 @@ class ElasticBeanstalk {
   }: {
     environmentName: string,
     infoType: string
-  }): Promise<*> {
+  }): Promise<void> {
     return new Promise((resolve, reject) => {
       this._EB.requestEnvironmentInfo(
         {
@@ -106,7 +106,7 @@ class ElasticBeanstalk {
   }: {
     environmentName: string,
     infoType: string
-  }): Promise<*> {
+  }): Promise<void> {
     return new Promise((resolve, reject) => {
       this._EB.retrieveEnvironmentInfo(
         {
