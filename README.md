@@ -18,6 +18,12 @@ ENVIRONMENTS=envs
 ENVIRONMENTS=test-env,test-env2,test-env3
 ```
 
+安裝 node_modules 相關套件
+
+```
+npm install
+```
+
 打包 Script 檔案
 
 ```
