@@ -2,6 +2,8 @@
 
 使用 Electron Open Source 快速並且更易管理您的 AWS Beanstalk 伺服器
 
+![electron-eb](https://s3-ap-northeast-1.amazonaws.com/yosgo-images/yosgo-electron-eb.png)
+
 ## Usage
 
 在根目錄底下建立 .env 檔案，配置環境變數
