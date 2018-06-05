@@ -7,6 +7,7 @@ class Content extends Component {
 
   render() {
     const {
+      region,
       infoTypes,
       environments,
       environmentName,
@@ -38,6 +39,7 @@ class Content extends Component {
               ))}
             </select>
           </div>
+          <div>地區：{region}</div>
           <br />
           <div onClick={clickToRequestEnvironmentInfo} className="btn btn-info">
             建立 {environmentName}

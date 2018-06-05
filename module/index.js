@@ -5,7 +5,7 @@ const { app, BrowserWindow } = require('electron');
 const isProduction = process.env.NODE_ENV === 'production';
 
 function createWindow() {
-  win = new BrowserWindow({ width: 800, height: 600 });
+  win = new BrowserWindow({ width: 1024, height: 768 });
 
   win.loadFile(path.resolve(__dirname, '../src/index.html'));
 

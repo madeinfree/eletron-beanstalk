@@ -21,6 +21,7 @@ class App extends Component {
     this.state = {
       environmentName: 'Yosgo-api-compose',
       infoType: 'tail',
+      region: config.awsRegion,
       tailList: [],
       environments: config.environments,
       infoTypes: config.infoTypes,
@@ -113,6 +114,7 @@ class App extends Component {
       <div>
         <Banner />
         <Content
+          region={this.state.region}
           infoTypes={this.state.infoTypes}
           environments={this.state.environments}
           environmentName={this.state.environmentName}
