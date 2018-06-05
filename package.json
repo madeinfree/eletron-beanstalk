@@ -8,7 +8,8 @@
     "dev": "cross-env electron ./module",
     "prod": "cross-env NODE_ENV=production electron ./module",
     "build-dev": "webpack --config ./webpack/webpack.dev.config.js",
-    "build-prod": "webpack -p --config ./webpack/webpack.product.config.js"
+    "build-prod": "webpack -p --config ./webpack/webpack.product.config.js",
+    "flow": "flow"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.6",
     "dotenv": "^6.0.0",

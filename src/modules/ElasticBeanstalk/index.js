@@ -1,7 +1,28 @@
+/**
+ * @flow
+ */
+
 const AWS = require('aws-sdk');
 
+type ElasticBeanstalkDefaultSetting = {
+  id: string,
+  key: string,
+  region: string,
+  version: string
+};
+
 class ElasticBeanstalk {
-  constructor({ id, key, region, version = '2010-12-01' }) {
+  _EB: AWS.ElasticBeanstalk;
+  _id: string;
+  _key: string;
+  _region: string;
+  _version: string;
+  constructor({
+    id,
+    key,
+    region,
+    version = '2010-12-01'
+  }: ElasticBeanstalkDefaultSetting) {
     this._EB = null;
 
     this._id = id;
@@ -19,7 +40,13 @@ class ElasticBeanstalk {
     });
   }
 
-  describeEnvironmentHealth({ environmentName, attributeNames = 'All' }) {
+  describeEnvironmentHealth({
+    environmentName,
+    attributeNames = 'All'
+  }: {
+    environmentName: string,
+    attributeNames: string
+  }): Promise<*> {
     return new Promise((resolve, reject) => {
       this._EB.describeEnvironmentHealth(
         {
@@ -34,7 +61,11 @@ class ElasticBeanstalk {
     });
   }
 
-  restartAppServer({ environmentName }) {
+  restartAppServer({
+    environmentName
+  }: {
+    environmentName: string
+  }): Promise<*> {
     return new Promise((resolve, reject) => {
       this._EB.restartAppServer(
         {
@@ -48,7 +79,13 @@ class ElasticBeanstalk {
     });
   }
 
-  requestEnvironmentInfo({ environmentName, infoType }) {
+  requestEnvironmentInfo({
+    environmentName,
+    infoType
+  }: {
+    environmentName: string,
+    infoType: string
+  }): Promise<*> {
     return new Promise((resolve, reject) => {
       this._EB.requestEnvironmentInfo(
         {
@@ -63,7 +100,13 @@ class ElasticBeanstalk {
     });
   }
 
-  retrieveEnvironmentInfo({ environmentName, infoType }) {
+  retrieveEnvironmentInfo({
+    environmentName,
+    infoType
+  }: {
+    environmentName: string,
+    infoType: string
+  }): Promise<*> {
     return new Promise((resolve, reject) => {
       this._EB.retrieveEnvironmentInfo(
         {
@@ -78,9 +121,12 @@ class ElasticBeanstalk {
     });
   }
 
-  isWorked() {
-    if (!this._EB) throw new Error('Should be init the AWS Beanstalk.');
-    else return true;
+  isInit() {
+    if (!this._EB) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
 

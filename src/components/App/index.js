@@ -1,3 +1,4 @@
+import AWS from 'aws-sdk';
 import React, { Component } from 'react';
 
 import Banner from '../Banner';
